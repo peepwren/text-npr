@@ -11,7 +11,6 @@
     --primary-fg: #333;
     --link-color: #2C63ae;
     --link-hover: #6d8ac4;
-    --footer-bg: #333;
     --footer-fg: #888;
     --font-stack: 18px/1.5 calibri, sans-serif;
     --doc-width: 700px;
@@ -20,6 +19,7 @@
     --npr-clr3: #4E84C4;
 }
 body {
+    background-color: var(--primary-bg);
     min-height: 100vh;
     margin: -1px auto 0;
     padding-top: 1px;
