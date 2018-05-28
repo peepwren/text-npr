@@ -10,3 +10,6 @@ Makes the lightweight version of npr a little bit prettier. Here's what it looks
 This style is intended for use with [Stylus](https://github.com/openstyles/stylus), or any style manager supporting .user.css functionality.
 
 Assuming Stylus is installed, it is enough to open the .css file in this repository and clicking the "Raw" button, and Stylus will give you the option to install the style.
+Alternatively just click the following direct link.
+
+<https://github.com/peepwren/text-npr/raw/master/text-npr.user.css>
