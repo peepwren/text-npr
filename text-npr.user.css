@@ -1,9 +1,11 @@
 /* ==UserStyle==
 @name           text-npr
 @namespace      https://github.com/peepwren/text-npr
-@version        0.0.1
+@version        0.0.2
 @description    Userstyle for text.npr.org
 @author         peepwren
+@preprocessor   stylus
+@var text       doc-width   'Max width'    700px
 ==/UserStyle== */
 @-moz-document domain("text.npr.org") {
 :root {
@@ -13,11 +15,12 @@
     --link-hover: #6d8ac4;
     --footer-fg: #888;
     --font-stack: 18px/1.5 calibri, sans-serif;
-    --doc-width: 700px;
+    --doc-width: doc-width;
     --npr-clr1: #F15C22;
     --npr-clr2: #000000;
     --npr-clr3: #4E84C4;
 }
+html,
 body {
     background-color: var(--primary-bg);
     min-height: 100vh;
@@ -33,20 +36,22 @@ a {
 a:hover {
     color: var(--link-hover);
 }
-p {
+p, ul {
+    list-style-type: none;
     color: var(--primary-fg);
     padding: 0 1rem;
+    margin:0.5rem 0;
 }
 body > p:first-of-type,
 body > ul + p {
     display: none;
 }
 body > p:nth-of-type(2) {
-    margin: 0.75rem auto 2.5rem;
+    margin: 0.5rem auto 1.5rem;
     width: 84px;
     height: 28px;
     font-size: 0;
-    background: url('https://media.npr.org/chrome_svg/npr-logo-color.svg') no-repeat 50% 50%
+    background: url('https://media.npr.org/chrome_svg/npr-logo-color.svg') no-repeat 50% 50%;
 }
 body > p:nth-of-type(2)::after {
     content: '';
@@ -55,8 +60,8 @@ body > p:nth-of-type(2)::after {
     height: 3px;
     position: absolute;
     left: 0;
-    top: calc(1.5rem + 28px);
-    background: linear-gradient(to right, var(--npr-clr1) calc(100%/3), var(--npr-clr2) calc(100%/3), var(--npr-clr2) calc(200%/3), var(--npr-clr3) calc(200%/3))
+    top: calc(1rem + 28px);
+    background: linear-gradient(to right, var(--npr-clr1) calc(100% / 3), var(--npr-clr2) calc(100% / 3), var(--npr-clr2) calc(200% / 3), var(--npr-clr3) calc(200% / 3));
 }
 body > p:nth-of-type(2) > a {
     display: inline-block;
@@ -64,21 +69,17 @@ body > p:nth-of-type(2) > a {
     height: 100%;
 }
 body > p:nth-child(4) {
-    font-size: 1.5rem;
+    font-size: 1.3333rem;
     line-height: 1.25;
-    margin: 0
+    margin: 0;
 }
 body > p:nth-child(5) {
-    font-size: 0.9em;
+    font-size: 0.8rem;
     margin: 0;
-    color: var(--footer-fg)
-}
-body > ul {
-    list-style-type: none;
-    padding: 0 1rem;
+    color: var(--footer-fg);
 }
 body > ul > li {
-    padding: 0.25em 0
+    padding: 0.2rem 0;
 }
 body > ul:last-of-type,
 body > ul + p + ul {
@@ -89,6 +90,6 @@ body > ul + p + ul {
 body > ul:last-of-type a,
 body > ul + p + ul a {
     color: var(--footer-fg);
-    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
 }
 }
