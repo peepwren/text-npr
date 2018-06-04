@@ -1,95 +1,108 @@
 /* ==UserStyle==
 @name           text-npr
 @namespace      https://github.com/peepwren/text-npr
-@version        0.0.2
+@version        0.0.3
 @description    Userstyle for text.npr.org
 @author         peepwren
 @preprocessor   stylus
 @var text       doc-width   'Max width'    700px
+@var text       font-size   'Font size'    16px
+@var text       font-face   'Font'         sans-serif
 ==/UserStyle== */
 @-moz-document domain("text.npr.org") {
-:root {
-    --primary-bg: #fff;
-    --primary-fg: #333;
-    --link-color: #2C63ae;
-    --link-hover: #6d8ac4;
-    --footer-fg: #888;
-    --font-stack: 18px/1.5 calibri, sans-serif;
-    --doc-width: doc-width;
-    --npr-clr1: #F15C22;
-    --npr-clr2: #000000;
-    --npr-clr3: #4E84C4;
-}
-html,
-body {
-    background-color: var(--primary-bg);
-    min-height: 100vh;
-    margin: -1px auto 0;
-    padding-top: 1px;
-    max-width: var(--doc-width);
-    font: var(--font-stack);
-}
-a {
-    color: var(--link-color);
-    text-decoration: none;
-}
-a:hover {
-    color: var(--link-hover);
-}
-p, ul {
-    list-style-type: none;
-    color: var(--primary-fg);
-    padding: 0 1rem;
-    margin:0.5rem 0;
-}
-body > p:first-of-type,
-body > ul + p {
-    display: none;
-}
-body > p:nth-of-type(2) {
-    margin: 0.5rem auto 1.5rem;
-    width: 84px;
-    height: 28px;
-    font-size: 0;
-    background: url('https://media.npr.org/chrome_svg/npr-logo-color.svg') no-repeat 50% 50%;
-}
-body > p:nth-of-type(2)::after {
-    content: '';
-    width: 100vw;
-    max-width: 100%;
-    height: 3px;
-    position: absolute;
-    left: 0;
-    top: calc(1rem + 28px);
-    background: linear-gradient(to right, var(--npr-clr1) calc(100% / 3), var(--npr-clr2) calc(100% / 3), var(--npr-clr2) calc(200% / 3), var(--npr-clr3) calc(200% / 3));
-}
-body > p:nth-of-type(2) > a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-}
-body > p:nth-child(4) {
-    font-size: 1.3333rem;
-    line-height: 1.25;
-    margin: 0;
-}
-body > p:nth-child(5) {
-    font-size: 0.8rem;
-    margin: 0;
-    color: var(--footer-fg);
-}
-body > ul > li {
-    padding: 0.2rem 0;
-}
-body > ul:last-of-type,
-body > ul + p + ul {
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
-}
-body > ul:last-of-type a,
-body > ul + p + ul a {
-    color: var(--footer-fg);
-    font-size: 0.9rem;
-}
+    :root {
+        --primary-bg: #fff;
+        --primary-fg: #333;
+        --link-color: #2C63ae;
+        --link-hover: #6d8ac4;
+        --footer-link-color: #888;
+        --footer-link-hover: #000;
+        --font-stack: font-size/1.5 font-face, sans-serif;
+        --doc-width: doc-width;
+        --npr-clr1: #F15C22;
+        --npr-clr2: #000000;
+        --npr-clr3: #4E84C4;
+    }
+    html,
+    body {
+        background-color: var(--primary-bg);
+        min-height: 100vh;
+        margin: -1px auto 0;
+        padding-top: 1px;
+        max-width: var(--doc-width);
+        font: var(--font-stack);
+    }
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--link-hover);
+    }
+    p,
+    ul {
+        list-style-type: none;
+        color: var(--primary-fg);
+        padding: 0 1rem;
+        margin: 0.5rem 0;
+    }
+    body > p:first-of-type,
+    body > ul + p {
+        display: none;
+    }
+    body > p:nth-of-type(2) {
+        margin: 0.5rem auto 1.5rem;
+        width: 5.25rem;
+        height: 1.75rem;
+        font-size: 0;
+        background: url('https://media.npr.org/chrome_svg/npr-logo-color.svg') no-repeat 50% 50%;
+    }
+    body > p:nth-of-type(2)::after {
+        content: '';
+        width: 100vw;
+        max-width: 100%;
+        height: 0.1875rem;
+        position: absolute;
+        left: 0;
+        top: 2.75rem;
+        background: linear-gradient(to right, var(--npr-clr1) calc(100% / 3), var(--npr-clr2) calc(100% / 3), var(--npr-clr2) calc(200% / 3), var(--npr-clr3) calc(200% / 3));
+    }
+    body > p:nth-of-type(2) > a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    body > p:nth-child(4) {
+        font-size: 1.3333rem;
+        line-height: 1.25;
+        margin: 0;
+    }
+    body > p:nth-child(5) {
+        font-size: 0.8rem;
+        margin: 0;
+        color: var(--footer-link-color);
+    }
+    body > ul > li {
+        padding: 0.2rem 0;
+    }
+    body > ul:last-of-type,
+    body > ul + p + ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    body > ul:last-of-type > li {
+        padding: 0;
+    }
+    body > ul:last-of-type a,
+    body > ul + p + ul a {
+        color: var(--footer-link-color);
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    body > ul:last-of-type a:hover,
+    body > ul + p + ul a:hover {
+        color: var(--footer-link-hover);
+    }
 }
